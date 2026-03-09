@@ -17,9 +17,6 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
-      - name: Setup Gradle
-        run: chmod +x gradlew && gradle wrapper --gradle-version 2.14
-
       - name: Setup Forge Workspace
         run: ./gradlew setupDecompWorkspace --no-daemon
 
@@ -27,7 +24,7 @@ jobs:
         run: ./gradlew build --no-daemon
 
       - name: Upload JAR
-        uses: uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: HeroMobs-jar
           path: build/libs/HeroMobs-1.0.0.jar
