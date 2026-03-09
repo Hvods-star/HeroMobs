@@ -17,6 +17,9 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
       - name: Setup Forge Workspace
         run: ./gradlew setupDecompWorkspace --no-daemon
 
