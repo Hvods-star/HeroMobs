@@ -1,0 +1,33 @@
+name: Build HeroMobs Mod
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Java 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        run: chmod +x gradlew && gradle wrapper --gradle-version 2.14
+
+      - name: Setup Forge Workspace
+        run: ./gradlew setupDecompWorkspace --no-daemon
+
+      - name: Build Mod
+        run: ./gradlew build --no-daemon
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v3
+        with:
+          name: HeroMobs-jar
+          path: build/libs/HeroMobs-1.0.0.jar
