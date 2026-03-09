@@ -1,0 +1,15 @@
+[
+{
+  "modid": "heromobs",
+  "name": "Hero Mobs",
+  "description": "Adds hostile hero mobs based on FiskHeroes armor suits. They look like players wearing the suits and drop the real FiskHeroes armor on death.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "authorList": ["HeroMobs"],
+  "credits": "FiskHeroes by FiskFille",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
